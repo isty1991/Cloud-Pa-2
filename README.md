@@ -1,4 +1,4 @@
-# Docker-Wine-Prediction
+## Docker-Wine-Prediction ##
 Using Spark Cluster, Hadoop file system, docker and parallel implementation the python script will perform wine quality prediction 
 
 # EC2 Instance Step up
