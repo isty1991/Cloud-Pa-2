@@ -1,7 +1,7 @@
 ## Docker-Wine-Prediction
 Using Spark Cluster, Hadoop file system, docker and parallel implementation the python script will perform wine quality prediction 
 
-# EC2 Instance Step up
+## EC2 Instance Step up
 
 1.Create one EC2 instance with either linux or Ubuntu AMI with t2.large image.
 
@@ -11,7 +11,7 @@ Using Spark Cluster, Hadoop file system, docker and parallel implementation the 
 
 4. Copy the .pem file from your local machine to EC2-instance by using scp command
 
-# Configure Flintrock
+## Configure Flintrock
 
 1. Install Python and pip on ec2 instance using the link
 2. Now install Flintrock using
@@ -40,7 +40,7 @@ mkdir assignment
 
 scp -i /Users/ishantyagi/Downloads/SparkMl.pem /Users/ishantyagi/Desktop/Cloud-Pa-2/TrainingDataset.csv ec2-user@ec2-54-90-98-17.compute-1.amazonaws.com:~/assignment/
 
-# Parallel Training Implementation across cluster
+## Parallel Training Implementation across cluster
 
 1. Create a folder in hadoop file system to make datasets globally available for the nodes in the cluster. use
 
@@ -63,14 +63,14 @@ here ip-172-31-30-207.ec2.internal is the master node address
 
 	hdfs dfs -get /model
 
-# Single Machine Wine Prediction
+## Single Machine Wine Prediction
 
 On the master node, use
 
 spark-submit --master local[*] test.py file:///home/ec2-user/assignment/ValidationDataset.csv file:///home/ec2-user/assignment/model\
 This will take only master node into consideration and we can see the Accuracy and F1-score on our local machine.
 
-# Setting up Docker on Master node
+## Setting up Docker on Master node
 
 1. Install most recent docker engine package: 
 
@@ -104,7 +104,7 @@ create docker hub account to see your image
 
 	docker pull it55/wine-quality:tag
 
-# Use Docker Container for wine Prediction
+## Use Docker Container for wine Prediction
 
 1. Launch your ec2-instance and then step-up docker using the above steps.
 
